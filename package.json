@@ -1,0 +1,26 @@
+{
+  "name": "air-cheap-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress",
+    "build": "NODE_ENV=production webpack -p --progress --colors"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "flux": "^2.1.1",
+    "react": "0.14.8",
+    "react-autosuggest-legacy": "^2.2.6",
+    "react-dom": "0.14.8",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^1.0.0"
+  }
+}
