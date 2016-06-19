@@ -9,7 +9,7 @@ class AirportStore extends ReduceStore {
 
   reduce(state, action) {
     switch(action.type) {
-      case constants.FETCH_AIRPORT_SUCCESS:
+      case constants.FETCH_AIRPORTS_SUCCESS:
         return action.payload.response;
       default: 
         return state;

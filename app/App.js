@@ -7,9 +7,10 @@ import AirportActionCreators from './actions/AirportActionCreators.js';
 
 class App extends Component {
   getSuggestions(input, callback) {
+    console.log(this.state)
     const escapedInput = input.trim().toLowerCase();
     const airportMatchRegex = new RegExp('\\b' + escapedInput, 'i')
-    const suggestions = this.state.AirportStore
+    const suggestions = this.state.airports
       .filter(airport => airportMatchRegex.test(airport.city))
       .sort((airport1, airport2) => {
         return airport1.city.toLowerCase().indexOf(escapedInput) - airport2.city.toLowerCase().indexOf(escapedInput)

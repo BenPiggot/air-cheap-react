@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import AirportActionCreators from '../actions/AirportActionCreators.js';
 
 let AirCheapAPI = {
   fetchAirports() {
@@ -13,6 +14,17 @@ let AirCheapAPI = {
     .catch((error) => {
       AirportActionCreators.fetchAirportsError(error);
     });
+  },
+
+  fetchTickets() {
+    fetch('tickets.json')
+    .then((response) => response.json())
+    .then((responseData) => {
+      AirportActionCreators.fetchTicketsSucess(responseData)
+    })
+    .catch((error) => {
+      AirportActionCreators.fetchTicketsError(error);
+    })
   }
 };
 
