@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } form 'react';
+import React, { Component, PropTypes } from 'react';
 
 const dateConfig = {
   weekday: "short",
@@ -21,26 +21,26 @@ class TicketItem extends Component {
     } else if (ticket.segment.length-1 > 1) {
       stops = ticket.segment.length-1 + ' stops';
     }
-  }
 
-  return <div>
-    <span className='ticket-company'>{ticket.company}</span>
-    <span className='ticket-location'>
-      <strong>{ticket.segment[0].origin}</strong>{' '}
-      <small>{departureTime}</small>
-    </span>
-    <span className='ticket-separator'></span>
-    <span className='ticket-location'>
-      <strong>{ticket.segment[ticket.segment.length-1].destination}</strong>{' '}
-      <small>{arrivalTime}</small>
-    </span>
-    <span className='ticket-connection'>
-      {stops}
-    </span>
-    <span className='ticket-points'>
-      <button>{ticket.points} points</button>
-    </span>
-  </div>
+    return <div>
+      <span className='ticket-company'>{ticket.company}</span>
+      <span className='ticket-location'>
+        <strong>{ticket.segment[0].origin}</strong>{' '}
+        <small>{departureTime}</small>
+      </span>
+      <span className='ticket-separator'></span>
+      <span className='ticket-location'>
+        <strong>{ticket.segment[ticket.segment.length-1].destination}</strong>{' '}
+        <small>{arrivalTime}</small>
+      </span>
+      <span className='ticket-connection'>
+        {stops}
+      </span>
+      <span className='ticket-points'>
+        <button>{ticket.points} points</button>
+      </span>
+    </div>
+  }
 }
 
 TicketItem.PropTypes = {
