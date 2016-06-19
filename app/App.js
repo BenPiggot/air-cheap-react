@@ -26,7 +26,7 @@ class App extends Component {
 
   handleSelect(target, suggestion, event) {
     const airportCodeRegex = /\(([^)]+)\)/;
-    let airportCode = airportCodeRegex.exec(suggestion[1]);
+    let airportCode = airportCodeRegex.exec(suggestion)[1];
     AirportActionCreators.chooseAirport(target, airportCode)
   }
 
@@ -43,9 +43,11 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.tickets)
     let ticketList = this.state.tickets.map((ticket) => {
-      <TicketItem key={ticket.id} ticket={ticket} />
+      return <TicketItem key={ticket.id} ticket={ticket} />
     })
+    console.log(ticketList)
     return <div>
       <header>
         <div className='header-brand'>

@@ -28,8 +28,8 @@ let AirportActionCreators = {
   chooseAirport(target, code) {
     AppDispatcher.dispatch({
       type: constants.CHOOSE_AIRPORT, 
-      target,
-      code
+      target: target,
+      code: code
     })
   },
 
